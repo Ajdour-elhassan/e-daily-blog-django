@@ -1,0 +1,17 @@
+
+ <!-- <ul class="list-group-item pos">
+  <p class="bk-secondary border-bottom list-group-item">latest_post</p>
+ -->
+
+  {% for post in l_posts %}
+
+  <div class="">
+
+    <a class="text-blue" href="{% url 'detail' post.id %}"> {{post.title}} </a> 
+
+  
+
+  </div>
+  
+  {% endfor %}
+</ul>

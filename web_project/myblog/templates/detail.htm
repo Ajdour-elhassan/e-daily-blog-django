@@ -1,0 +1,61 @@
+{% extends 'base.htm' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container">
+<div class="row">
+    <!-- This is first part -->
+<div class="col-md-6">
+  <!-- Empty colon -->
+</div>
+    <div class="col-md-6">
+    <div class="container">
+    <div class="row">
+    <div class="border p2 ">
+    <h5 href="#"> {{post.title}} </h5>
+    <p>{{post.content}} </p>
+    <div class="form_group btn-editing mt-3">
+        <a class="btn btn-secondary" href="#"> Add </a>
+        <button class="btn btn-danger" type="submit"> Delete </button>
+    </div>
+  
+    <h3 class="border-bottom mt-3"> all comments ({{comments.count}}) </h3>
+    {% if comments %}
+    {% for comment in comments %} 
+    <div class="mb-3 p-3 comment">
+       <small class="text-secondary"> ({{comment.name}}) commented on {{comment.comment_date|date:'d-m-Y'}}  </small>
+       <p class="mb-0">{{comment.body}}</p>
+    </div>
+    {% endfor %}
+{% else %}
+   <div class="text-center mb-3 p-3 comment">
+    <p class="mb-0"> no comment </p>
+    </div>
+{% endif %}
+
+{%for comment in comment %}
+<p class="text-center mb-3 border-bottom-0 bk-secondary"> {{comment.name}} commented : " {{comment.body}}"</p>
+{% endfor %}
+
+<h4 class="border-bottom pb-3 mb-3 mt-5 "> Add Comment </h4>
+<form method="POST">
+
+    {% csrf_token %}
+    {{comment_form | crispy }}
+    <input class="btn btn-secondary" type="submit" value="SUBMIT" >
+</form>
+
+    </div>
+    </div>
+    </div>
+    </div>
+
+</div>
+</div>
+
+    
+
+<br>
+<br>
+<br>
+{% endblock content %}

@@ -1,0 +1,164 @@
+{% extends 'base.htm' %}
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{message.tags}}">
+    {{message}}
+</div>
+{% endfor %}
+{% endif %}
+<header class="imag">
+    <br>
+    <br>
+<!--Start body side -->
+<header>
+<section>
+    <div class="container">
+        <div class="row">
+            <!--First Part Started Here-->
+            <div class="col-md-8">
+                
+                </div>
+
+            <!--Second part start here-->
+    <div class="col-md-4">
+    <div class="clearfix visible-md"> </div>
+    {% for post in posts %}
+    <div class="col-lg-4 col-md-3 col-sm-2 float-left mt-2 text-center">
+                   <p> <img src="{{post.image.url}}" class="img-fluid rounded-circle myimg" width="40px"> </p>
+                  <!--<span> published_date :  {{post.post_date|date:'d-m-Y'}} </span> -->
+                     <p> <a  href="{% url 'detail' post.id %}"> {{post.title}} </a> </p>
+    
+
+                  {% if post.content|length > 40 %}
+
+                    {{post.content|slice:'45'}} ...
+          
+                    {% else %}
+          
+                    {{post.content}}
+          
+                    {% endif %}
+    
+                </div>
+                {% endfor %}
+    </div>
+ 
+</div>
+</div>
+    <div class="mt-4 text-center">
+        {% include 'pagination.htm' with page=posts %}
+   </div>
+</section>
+</header>
+
+<hr class="mt-4">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+<div class ="container items">
+<div class ="row">
+<div class="col-lg-2 col-md-4 col-sm-2">
+    <img class="img-fluid rounded-circle myimg" width="50px"
+    src="static\images\3.jpg">
+    <h5> Digital Marketing </h5>
+    <p> this is blog preneted by e-Gatway company for prepering eaple for unexpedt things</p>
+</div>
+<div class="col-lg-2  col-md-4 col-sm-2">
+    <img class="img-fluid rounded-circle myimg" width="50px"
+    src="static\images\4.jpg">
+    <h5> Market yout content </h5>
+    <p> this is blog preneted by e-Gatway company for prepering eaple for unexpedt things</p>
+</div>
+<div class="col-lg-2  col-md-4 col-sm-2">
+    <img class="img-fluid rounded-circle  myimg" width="50px"  
+    src="static\images\3.jpg">
+    <h5> the Secret of increasing sales </h5>
+    <p> this is blog preneted by e-Gatway company for prepering eaple for unexpedt things</p>
+</div>
+<div class="clearfix visible-md"> </div>
+<div class="col-lg-2  col-md-4 col-sm-2">
+    <img class="img-fluid rounded-circle myimg" width="50px" 
+    src="static\images\3.jpg">
+    <h5> the Secret of increasing sales </h5>
+    <p> this is blog preneted by e-Gatway company for prepering eaple for unexpedt things</p>
+</div>
+<div class="col-lg-2 col-md-4 col-sm-2">
+    <img class="img-fluid rounded-circle  myimg" width="50px"  
+    src="static\images\3.jpg">
+    <h5> the Secret of increasing sales </h5>
+    <p> this is blog preneted by e-Gatway company for prepering eaple for unexpedt things</p>
+</div>
+<div class="col-lg-2 col-md-4 col-sm-2">
+    <img class="img-fluid rounded-circle  myimg" width="50px"  
+    src="static\images\3.jpg">
+    
+    <h5> the Secret of increasing sales </h5>
+    <p> this is blog preneted by e-Gatway company for prepering eaple for unexpedt things</p>
+
+    </div>
+</div>
+</div>
+    
+<hr class="mt-4">
+<br>
+<br>
+<div class ="container items">
+    <div class ="row">
+    <div class="col-lg-2 col-md-4 col-sm-2">
+        <img class="img-fluid rounded-circle myimg" width="50px"
+        src="static\images\3.jpg">
+        <h5> Digital Marketing </h5>
+        <p> this is blog preneted by e-Gatway company for prepering eaple for unexpedt things</p>
+    </div>
+    <div class="col-lg-2  col-md-4 col-sm-2">
+        <img class="img-fluid rounded-circle myimg" width="50px"
+        src="static\images\4.jpg">
+        <h5> Market yout content </h5>
+        <p> this is blog preneted by e-Gatway company for prepering eaple for unexpedt things</p>
+    </div>
+    <div class="col-lg-2  col-md-4 col-sm-2">
+        <img class="img-fluid rounded-circle  myimg" width="50px"  
+        src="static\images\3.jpg">
+        <h5> the Secret of increasing sales </h5>
+        <p> this is blog preneted by e-Gatway company for prepering eaple for unexpedt things</p>
+    </div>
+    <div class="clearfix visible-md"> </div>
+    <div class="col-lg-2  col-md-4 col-sm-2">
+        <img class="img-fluid rounded-circle myimg" width="50px" 
+        src="static\images\3.jpg">
+        <h5> the Secret of increasing sales </h5>
+        <p> this is blog preneted by e-Gatway company for prepering eaple for unexpedt things</p>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-2">
+        <img class="img-fluid rounded-circle  myimg" width="50px"  
+        src="static\images\3.jpg">
+        <h5> the Secret of increasing sales </h5>
+        <p> this is blog preneted by e-Gatway company for prepering eaple for unexpedt things</p>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-2">
+        <img class="img-fluid rounded-circle  myimg" width="50px"  
+        src="static\images\3.jpg">
+        
+        <h5> the Secret of increasing sales </h5>
+        <p> this is blog preneted by e-Gatway company for prepering eaple for unexpedt things</p>
+    
+        </div>
+    </div>
+    </div>
+        
+
+
+
+
+
+{% endblock content %}

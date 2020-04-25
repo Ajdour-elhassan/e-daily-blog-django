@@ -1,0 +1,37 @@
+{% extends 'base.htm' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container ml-center register">
+<div class="border mb-4 col-5">
+<div class="container ml-4 ">
+
+<div class="row">
+    <legend class="ml-2 "> Profile </legend>
+    <form method="POST" enctype="multipart/form-data">
+        
+        {% csrf_token %}
+        
+        {{user_form|crispy}}
+      <!-- {{user_profile|crispy}} -->
+    <div>
+        <span>Image Profile</span>
+        <br>
+        <label for="image" class="btn btn-outline-success mt-2" > Choose Profile </label>
+        <input type="file" name="image" id="image" accept="image/*" style="display: none" >
+    </div>
+
+        <input class="btn btn-primary btn-active mt-2" type="submit" value="Edit">
+    </form>
+
+</div>
+</div>
+</div>
+</div>
+
+{% endblock content %}

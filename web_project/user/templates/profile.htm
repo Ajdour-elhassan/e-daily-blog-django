@@ -1,0 +1,55 @@
+{% extends 'base.htm' %}
+{% block content %}
+<!--{% load crispy_forms_tags %}-->
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{message.tags}}">
+    {{message}}
+</div>
+{% endfor %}
+{% endif %}
+<br>
+<br>
+<div class="container">
+<div class="border p-4 mb-5 col-7">
+    <div class="row">
+    <div class="col-md-3">
+    <img src="{{user.profile.image.url}}" alt="{{user.username}}" class="img-fluid rounded-circle border m-2" style="width: 120px; height:120px; "> 
+    <button type="submit" class="btn btn-success ml-3 font-weight-normal"> <a href="{% url 'profile_update' %}" >  Update </a> </button>
+        </div>
+        <div class="col-md-9">
+            <h3 class="mb-3"> Profil </h3>
+            <p class="font-weight-bold"> UserName : <span class="font-weight-normal" > {{user.username}} </span></p>
+            <p class="font-weight-bold"> Full Name : <span class="font-weight-normal"> {{user.first_name}}  {{user.second_name}} </span></p>
+            <p class="font-weight-bold"> Email : <span class="font-weight-normal"> {{user.email}} </span></p>
+            <p class="font-weight-bold"> Address : <span class="font-weight-normal"> {{user.address}} </span></p>
+            <p class="font-weight-bold"> Membership : <span class="font-weight-normal"> Teacher and Software Enginner</span></p>
+            <p class="font-weight-bold"> Country : <span class="font-weight-normal"> Morocoo </span></p>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container">
+<div class="row">
+<div class="col-md">
+    <h4 class="border-bottom pb-3 mb-3 col-7 color-black"> All_Posts </h4>
+    <h4 class="bg-primary text-light text-center p-2 col-7"> {{posts.count}} </h4>
+
+    <h4 class="border-bottom pb-3 mb-4 mt-4 col-7"> All My_Blogs </h4>
+    {% for post in post_list %}
+    <ul class="pr-2">
+    <a href="{% url 'detail' post.id %}"  class="font-weight-bold text-blue"> *
+    <span class="font-weight-normal"> {{post.title}} </span></a>
+    </ul>
+     {% empty %}
+     <a class="text-center mb-4"></a>
+    {% endfor %}
+  
+    {% include 'pagination.htm' with page=post_list %}
+
+    
+</div>
+</div>
+</div>
+{% endblock content %}
