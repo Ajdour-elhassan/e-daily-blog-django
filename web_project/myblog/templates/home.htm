@@ -17,38 +17,35 @@
         <div class="row">
             <!--First Part Started Here-->
             <div class="col-md-8">
-                
-                </div>
-
+                <!--First section -->
+             </div>
             <!--Second part start here-->
     <div class="col-md-4">
-    <div class="clearfix visible-md"> </div>
-    {% for post in posts %}
-    <div class="col-lg-4 col-md-3 col-sm-2 float-left mt-2 text-center">
-                   <p> <img src="{{post.image.url}}" class="img-fluid rounded-circle myimg" width="40px"> </p>
-                  <!--<span> published_date :  {{post.post_date|date:'d-m-Y'}} </span> -->
-                     <p> <a  href="{% url 'detail' post.id %}"> {{post.title}} </a> </p>
-    
-
-                  {% if post.content|length > 40 %}
-
-                    {{post.content|slice:'45'}} ...
-          
-                    {% else %}
-          
-                    {{post.content}}
-          
-                    {% endif %}
-    
+        {% for post in posts %}
+            <div class="border p-4 mt-4">
+               <div class="col-md-3">
+                <div class="row">
+                   <p> <img src="{{post.image.url}}" class="img-fluid rounded-circle myimg" style="width: 70px; height:70px;"> </p>
+                   <p> <a  href="{% url 'detail' post.id %}"> {{post.title}} </a> </p>
                 </div>
+                </div>
+                <div class="col-md-9">
+                       {% if post.content|length > 40 %}
+                       {{post.content|slice:'45'}} ...
+                       {% else %}
+                       {{post.content}}
+                       {% endif %}
+                       <span> published_date : ---- {{post.post_date|date:'d-m-Y'}} ---- </span> 
+                </div>
+        </div>
                 {% endfor %}
     </div>
- 
-</div>
-</div>
+    </div>
+
     <div class="mt-4 text-center">
         {% include 'pagination.htm' with page=posts %}
    </div>
+
 </section>
 </header>
 

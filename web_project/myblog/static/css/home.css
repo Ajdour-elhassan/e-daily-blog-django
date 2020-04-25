@@ -1,13 +1,13 @@
-@font-face {
+/*@font-face {
 
-    font-family: 'Allerta';
+    font-family: 
     src: url('../fonts/Allerta-Regular.ttf')  format("truetype"),
         local('Allerta');
-}
+}  */
 body {
 
-    background-color: ;
-    font-family: 'Allerta, sans-serif' ;
+    background-color: rgb(168, 151, 151) ;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 html,body {
