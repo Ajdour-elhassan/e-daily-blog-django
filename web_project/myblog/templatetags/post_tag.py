@@ -2,7 +2,7 @@ from django import template
 from myblog.models import post, comment 
 
 register = template.Library()
-@register.inclusion_tag('latest_post.htm')
+@register.inclusion_tag('posts.htm')
 def latest_posts():
     context = {
         'l_posts': post.objects.all()[0:3],

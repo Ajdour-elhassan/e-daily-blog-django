@@ -15,8 +15,6 @@ class post(models.Model):
 
     def __str__(self):
         return self.title
-    def get_absolute_url(self):
-        return reverse('detail', args={self.pk})
 
         #Arranagin POST date from new to old date .
     class Meta():

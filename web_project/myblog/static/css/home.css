@@ -4,9 +4,19 @@
     src: url('../fonts/Allerta-Regular.ttf')  format("truetype"),
         local('Allerta');
 }  */
+
+.navbar {
+    
+   /* background-color:rgb(14, 13, 13); /*whichever you want*/
+   border-bottom : 3px solid #008ed6 ;
+   opacity: 0.8;
+   color: #008ed6;
+  /* filter:(opacity=50);   */
+
+}
 body {
 
-    background-color: rgb(168, 151, 151) ;
+    background-color : #f2f4f4  ;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -40,36 +50,13 @@ html,body {
     margin : 0 auto ;
     padding-bottom: 10px;
 }
-.items {
-    text-align: center ;
-}
-.course {
-
-    list-style-type: none;
-
-
-}
-
-.dropdown-menu .dropdown-item {
-
-    text-align: right ;
-}
-
-.btn-editing{
-    float: right;
-}
-
-
-
-
-
 
 
 
 
 .first {
 
-   background-color: lightcyan;
+    background-color: lightcyan;
     text-align: center ;
     padding : 2px 2px 2px 0 ;
 
@@ -90,37 +77,5 @@ html,body {
 
 
 
-.post {
-   
-    list-style-type: none;
-    margin-left: 30;
-    margin-right: 0px;
 
-}
-
-.pos {
-
-    list-style-type: none;
     
-
-
-}
-
-
-.comment {
-
-    list-style-type: none;
-
-
-  
-    
-
-}
-
-.latest_comment {
-
-    list-style-type: none;
-
-
-  
-}

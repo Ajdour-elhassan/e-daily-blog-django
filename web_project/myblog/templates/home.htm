@@ -7,105 +7,60 @@
 </div>
 {% endfor %}
 {% endif %}
-<header class="imag">
-    <br>
-    <br>
-<!--Start body side -->
-<header>
+     
 <section>
-    <div class="container">
-        <div class="row">
-            <!--First Part Started Here-->
-            <div class="col-md-8">
-                <!--First section -->
-             </div>
-            <!--Second part start here-->
-    <div class="col-md-4">
-        {% for post in posts %}
-            <div class="border p-4 mt-4">
-               <div class="col-md-3">
-                <div class="row">
-                   <p> <img src="{{post.image.url}}" class="img-fluid rounded-circle myimg" style="width: 70px; height:70px;"> </p>
-                   <p> <a  href="{% url 'detail' post.id %}"> {{post.title}} </a> </p>
+  <header>
+           <div class="container ml-0">
+              <div class="row">
+                <div class="col-md-4"> 
+                  {% include 'posts.htm' %}
                 </div>
-                </div>
-                <div class="col-md-9">
-                       {% if post.content|length > 40 %}
-                       {{post.content|slice:'45'}} ...
-                       {% else %}
-                       {{post.content}}
-                       {% endif %}
-                       <span> published_date : ---- {{post.post_date|date:'d-m-Y'}} ---- </span> 
-                </div>
-        </div>
-                {% endfor %}
-    </div>
-    </div>
+                     <!--First Part Started Here-->
+                     <!--Second section -->
 
-    <div class="mt-4 text-center">
-        {% include 'pagination.htm' with page=posts %}
-   </div>
-
-</section>
+                    <div class="col-md-8">
+                       <div class="container">
+                           <div class="row">
+                       
+                               <div class="card">
+                                 <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/pasta.jpg" alt="Bologna">
+                                 <div class="card-img-overlay">
+                                   <a href="#" class="btn btn-light btn-sm"> button </a>
+                                 </div>
+                                 <div class="card-body">
+                                   <h4 class="card-title">why we read?</h4>
+                                   <small class="text-muted cat">
+                                     <i class="far fa-clock text-info"></i> 30 minutes
+                                     <i class="fas fa-users text-info"></i> 4 portions
+                                   </small>
+                                   <p class="card-text">I love quick, simple pasta dishes, and this is one of my favorite.</p>
+                                   <a href="#" class="btn btn-info"> Read article </a>
+                                 </div>
+                                 <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
+                                   <div class="views">Oct 20, 12:40 </div>
+                                   <div class="stats">
+                                 
+                                     <i class="far fa-comment"></i>  comments.count
+                                   </div>
+                                   
+                                 
+                               </div>
+                             </div>
+                           </div>
+                         </div>
+                    </div>
+              </div>
+           </div>
 </header>
+</section>
 
-<hr class="mt-4">
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
-
-
-
-<div class ="container items">
-<div class ="row">
-<div class="col-lg-2 col-md-4 col-sm-2">
-    <img class="img-fluid rounded-circle myimg" width="50px"
-    src="static\images\3.jpg">
-    <h5> Digital Marketing </h5>
-    <p> this is blog preneted by e-Gatway company for prepering eaple for unexpedt things</p>
+<!-- this is pagiantion -->
+<div class="mt-4 text-center">
+   {% include 'pagination.htm' with page=posts %}
 </div>
-<div class="col-lg-2  col-md-4 col-sm-2">
-    <img class="img-fluid rounded-circle myimg" width="50px"
-    src="static\images\4.jpg">
-    <h5> Market yout content </h5>
-    <p> this is blog preneted by e-Gatway company for prepering eaple for unexpedt things</p>
-</div>
-<div class="col-lg-2  col-md-4 col-sm-2">
-    <img class="img-fluid rounded-circle  myimg" width="50px"  
-    src="static\images\3.jpg">
-    <h5> the Secret of increasing sales </h5>
-    <p> this is blog preneted by e-Gatway company for prepering eaple for unexpedt things</p>
-</div>
-<div class="clearfix visible-md"> </div>
-<div class="col-lg-2  col-md-4 col-sm-2">
-    <img class="img-fluid rounded-circle myimg" width="50px" 
-    src="static\images\3.jpg">
-    <h5> the Secret of increasing sales </h5>
-    <p> this is blog preneted by e-Gatway company for prepering eaple for unexpedt things</p>
-</div>
-<div class="col-lg-2 col-md-4 col-sm-2">
-    <img class="img-fluid rounded-circle  myimg" width="50px"  
-    src="static\images\3.jpg">
-    <h5> the Secret of increasing sales </h5>
-    <p> this is blog preneted by e-Gatway company for prepering eaple for unexpedt things</p>
-</div>
-<div class="col-lg-2 col-md-4 col-sm-2">
-    <img class="img-fluid rounded-circle  myimg" width="50px"  
-    src="static\images\3.jpg">
-    
-    <h5> the Secret of increasing sales </h5>
-    <p> this is blog preneted by e-Gatway company for prepering eaple for unexpedt things</p>
 
-    </div>
-</div>
-</div>
-    
+
+<!--fotter -->
 <hr class="mt-4">
 <br>
 <br>
@@ -152,10 +107,5 @@
         </div>
     </div>
     </div>
-        
 
-
-
-
-
-{% endblock content %}
+{% endblock content %} 

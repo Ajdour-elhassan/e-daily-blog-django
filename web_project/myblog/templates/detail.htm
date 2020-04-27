@@ -2,60 +2,86 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-<div class="container">
-<div class="row">
-    <!-- This is first part -->
-<div class="col-md-6">
-  <!-- Empty colon -->
-</div>
-    <div class="col-md-6">
-    <div class="container">
-    <div class="row">
-    <div class="border p2 ">
-    <h5 href="#"> {{post.title}} </h5>
-    <p>{{post.content}} </p>
-    <div class="form_group btn-editing mt-3">
-        <a class="btn btn-secondary" href="#"> Add </a>
-        <button class="btn btn-danger" type="submit"> Delete </button>
-    </div>
+<section>
+  <header>
+        <div class="container ml-0">
+            <div class="row">
+                <div class="col-md-4">
+                   
+                 </div>
+                     <!--First Part Started Here-->
+                     <!--Second section -->
+                    <div class="col-md-8">
+                       <div class="container">
+                           <div class="row">
+                       
+                               <div class="card">
+                                 <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/pasta.jpg" alt="Bologna">
+                                 <div class="card-img-overlay">
+                                   <a href="#" class="btn btn-light btn-sm"> type : </a>
+                                 </div>
+                                 <div class="card-body">
+                                   <h4 class="card-title"> {{post.title}} </h4>
+                        
+                                   <p class="card-text">{{post.content}}</p>
+                                   <a href="#" class="btn btn-info"> read more </a>
+                                 </div>
+                                  <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
+                                  <p class="views">Last updated :  {{post.post_date|date:'d-m-Y'}}  </p>
+                                  
+                             </div>
+                             <h4 class="border-bottom mt-3"> all comments ({{comments.count}}) </h4>
+                                      {% if comments %}
+                                   {% for comment in comments %}
+                                    <div class="mb-3 p-3 comment">
+                                    <small class="text-secondary"> ({{comment.name}}) commented on {{comment.comment_date|date:'d-m-Y'}}  </small>
+                                     <p class="mb-0">{{comment.body}}</p>
+                                     </div>
+                                    {% endfor %}
+                                    {% else %}
+                                    <div class="border mp-3 p-3 comment">
+                                    <p class="mb-0"> no comment </p>
+                                    </div>
+                                    {% endif %}
+
+                                    {% for comment in comment %}
+                                            <h4 class="border-bottom pb-3 mb-3 mt-5 "> Add Comment </h4>
+                                    {% endfor %}
+                                  
+                                    <form method="POST">
+
+                                      {% csrf_token %}
+                                      {{comment_form | crispy }}
+
+                                      <input class="btn btn-secondary" type="submit" value="SUBMIT" >
+                                      </form>
+                                    
+                              </div>
+                         </div>
+                    </div>
+  </header>
+</section>
+
+
+
   
-    <h3 class="border-bottom mt-3"> all comments ({{comments.count}}) </h3>
-    {% if comments %}
-    {% for comment in comments %} 
-    <div class="mb-3 p-3 comment">
-       <small class="text-secondary"> ({{comment.name}}) commented on {{comment.comment_date|date:'d-m-Y'}}  </small>
-       <p class="mb-0">{{comment.body}}</p>
+<section>
+  {% for post in posts %}
+  <div class="col-md-4 float-right"> 
+  <div class="card-deck">
+    <div class="card">
+      <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap" style="width:420px; height:150px;" >
+      <div class="card-body">
+        <h5 class="card-title"> {{ post.title }} </h5>
+        <p class="card-text">{{post.content}}</p>
+        <p class="card-text"><small class="text-muted">Last updated {{post.post_date|date:'d-m-Y'}} </small></p>
+      </div>
     </div>
-    {% endfor %}
-{% else %}
-   <div class="text-center mb-3 p-3 comment">
-    <p class="mb-0"> no comment </p>
-    </div>
-{% endif %}
+   </div>
+  </div>
+  {% endfor %}
+</section>
 
-{%for comment in comment %}
-<p class="text-center mb-3 border-bottom-0 bk-secondary"> {{comment.name}} commented : " {{comment.body}}"</p>
-{% endfor %}
 
-<h4 class="border-bottom pb-3 mb-3 mt-5 "> Add Comment </h4>
-<form method="POST">
 
-    {% csrf_token %}
-    {{comment_form | crispy }}
-    <input class="btn btn-secondary" type="submit" value="SUBMIT" >
-</form>
-
-    </div>
-    </div>
-    </div>
-    </div>
-
-</div>
-</div>
-
-    
-
-<br>
-<br>
-<br>
 {% endblock content %}

@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import PostCreateView
+
 
 
 urlpatterns = [
@@ -11,7 +11,7 @@ urlpatterns = [
     # Url for comment_datail_page
     path('detail/<int:post_id>/', views.detail, name='detail'),
 
-    path('new_post/' ,PostCreateView.as_view(), name='new_post'),
+    
 
 ]
 

@@ -1,0 +1,21 @@
+<header> 
+<div class="container">
+        <div class="row">
+         <div class="card" style="width: 18rem;">
+            <div class="alert alert-primary" role="alert">
+              Latest Posts
+            </div>
+           <div class="card-body">
+              {% for post in posts %}
+               <p><img src="{{post.image.url}}" class="img-fluid rounded-circle " style="width: 70px; height:70px;"> </p>
+               <h5 class="card-title">{{post.title}}</h5>
+               <p class="card-text"> Why Develper dont love Java ? </p>
+               <p class="card-text"> last updated : {{post.post_date|date:'d-m-Y'}}  </p>
+               <a href="{% url 'detail' post.id %}" class="btn btn-primary">Read more ...</a>
+               <p class="border-bottom pb-3 mb-4 mt-4"></p>
+               {% endfor %}
+             </div>
+           </div>
+        </div>
+   </div>
+</header>

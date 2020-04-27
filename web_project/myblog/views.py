@@ -65,14 +65,7 @@ def detail(request, post_id) :
     }
     return render(request, 'detail.htm' , context )
 
-class PostCreateView(LoginRequiredMixin, CreateView) :
-    model = post
-    fields = ['title' , 'content']
-    template_name = 'new_post.htm'
 
-    def form_valid(self, form) :
-        form.instance.author = self.request.user
-        return super().form_valid(form)
 
 
 
