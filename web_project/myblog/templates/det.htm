@@ -1,0 +1,38 @@
+
+                          
+                           <h4 class="mt-3"> all comments  ({{comments.count}}) </h4>
+
+                           <div class="border p-4 mb-5">
+                                     {% if comments %}
+                                 {% for comment in comments %}
+                            
+                                  <small class=""> ({{comment.name}}) commented on {{comment.comment_date|date:'d-m-Y'}}  </small>
+                                  <p class="mb-0">{{comment.body}}</p>
+                                      
+                            {% endfor %}
+                            {% else %}
+                          
+                            <p class="mb-0"> no comment </p>
+                            
+                            {% endif %}
+                          </div>
+
+
+                          <h3>express your view By Comment Here!</h3>
+                          
+                          {% for comment in comments %}
+                            <div class="border p-4 mb-5">
+                              
+                              <!-- adding all comments here -->
+                            
+                            </div>
+                            {% endfor %}
+
+                              <p class=""> Leave us your Feedback in the comment above </p>
+                              <form method="POST">
+            
+                                {% csrf_token %}
+                                {{comment_form|crispy}} 
+                                <input class="btn btn-success btn-active" type="submit" value="Submit">
+
+                               </form> 
