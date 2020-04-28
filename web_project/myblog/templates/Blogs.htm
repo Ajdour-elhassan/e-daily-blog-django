@@ -1,19 +1,17 @@
-<section>
-  <header> 
-  {% for post in posts %}
-  <div class="col-md-4">
-  <div class="card-deck">
-    <div class="card">
-      <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap" >
-      <div class="card-body">
-        <h5 class="card-title"> {{ post.title }} </h5>
-        <p class="card-text"> <!--{{post.content}} --></p>
-        <p class="card-text"><small class="text-muted">Last updated {{post.post_date|date:'d-m-Y'}} </small>
-      </div>
-    </div>
-   </div>
+<section> 
+<header>
+{% for post in posts %}
+
+<div class="card mb-3" >
+  <img class="card-img-" src="{{post.image.url}}" alt="Card image cap"  style="height: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{post.title}}</h5>
+    <h5 class="card-title">{{post.sub_title}}</h5>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text"><small class="text-muted">Last updated 1 hour ago </small></p>
+    <a href="{% url 'detail' post.id %}" class="btn btn-success">Read more ...</a>
   </div>
-  <br>
-   {% endfor %}
-  </header>
+</div>
+{% endfor %}
+</header>
 </section>

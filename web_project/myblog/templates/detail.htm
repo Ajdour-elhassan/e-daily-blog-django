@@ -7,65 +7,69 @@
         <div class="container ml-0">
             <div class="row">
                 <div class="col-md-4">
-
-                  
-                  
+                   
+                   <!--empty colum-->
+                       
                  </div>
                      <!--First Part Started Here-->
                      <!--Second section -->
                  <div class="col-md-8">
-                       <div class="container">
-                           <div class="row">
-                       
-                               <div class="card">
-                                 <img class="card-img" src="{{post.image.url}}" alt="Bologna">
-                                 <div class="card-img-overlay">
-                                   <a href="#" class="btn btn-light btn-sm"> type : </a>
-                                 </div>
-                                 <div class="card-body">
-                                   <h4 class="card-title"> {{post.title}} </h4>
-                        
-                                   <p class="card-text">{{post.content}}</p>
-                                   <a href="#" class="btn btn-info"> read more </a>
-                                 </div>
-                                  <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
-                                  <p class="views">Last updated :  {{post.post_date|date:'d-m-Y'}}  </p>
-                                  
+                        <div class="card mb-3">
+                          <img class="card-img-top" src="{{post.image.url}}" alt="picture"  style="height: 18rem;">
+                          <div class="card-body">
+                            <h5 class="card-title">{{post.title}}</h5>
+                            <h5 class="card-title">{{post.content}}</h5>
+                            <p class="card-text"> also subtitle should be added to this part </p>
+                            <p class="card-text"><small class="text-muted">Last updated 1 hour ago </small></p>
                           </div>
-                      </div>
-                  </div>
-              </div>
+                       </div>
+                 </div>
             </div>
-         </div>
       </div>
     </header>
 </section>
- 
 
-
-  
-
-
-  
 <section>
-  <header> 
- <!-- {% for post in posts %} -->
-  <div class="col-md-4 float-right"> 
-  <div class="card-deck">
-    <div class="card">
-      <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap" style="width:420px; height:150px;" >
-      <div class="card-body">
-        <h5 class="card-title"> {{ post.title }} </h5>
-        <p class="card-text">{{post.content}}</p>
-        <p class="card-text"><small class="text-muted">Last updated {{post.post_date|date:'d-m-Y'}} </small></p>
-      </div>
+  <header>
+        <div class="container ml-0">
+            <div class="row">
+                <div class="col-md-4">
+                
+                   <!--this is first part -->
+                </div>
+            <!--this second part -->
+            <div class="col-md-8">
+              <h5>Express your view by Comment Here! </h5>
+              <h4 class="border-bottom mt-5 mb-3"> All comments ({{comments.count}})</h4>
+             <div class="border p-4 mb-5 mt-4">
+                    {% for comment in comments %}
+                     <ul class="p-3 comment">
+                    <h1>{{comment.name}}<h1>
+                    </h5>  {{comment.comment_date|date:'d-m-Y'}}</h5>
+                     <h5>   {{comment.body}} </h5>
+                    
+                        {% empty %}
+                 <h6 class="text-center p-4 mb-3 comment"> no comments </h6>
+                {% endfor %}
+             </div>
+
+<!-- Comment Form -->
+
+<h5>Leave us your feedback in the comments above!</h5>
+
+
+    <form method="POST">
+        {% csrf_token %}
+        {{comment_form|crispy}}
+        <input class="btn btn-secondary" type="submit" value="Submit">
+    </form>
+          </div>
+       </div>
     </div>
-   </div>
-  </div>
- <!-- {% endfor %} --> 
-  </header>
+</header>
 </section>
 
 
 
 {% endblock content %}
+

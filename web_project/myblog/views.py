@@ -10,7 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin , UserPassesTestMixin
 def home(request):
     posts = post.objects.all()
 
-    paginator = Paginator(posts, 3)
+    paginator = Paginator(posts, 6)
 
     page = request.GET.get('page')
 
