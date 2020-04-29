@@ -10,8 +10,10 @@ urlpatterns = [
 
     # Url for comment_datail_page
     path('detail/<int:post_id>/', views.detail, name='detail'),
-
     
+    # Url for Post_Updating
+
+    path('post_update', views.post_update , name='post_update'),
 
 ]
 

@@ -1,16 +1,18 @@
 from django.shortcuts import render ,get_object_or_404  #HttpResponse
 from .models import post , comment
 from django.contrib.auth.models import User
-from .forms import Newcomment
+from .forms import Newcomment , Post_Update
 from django.core.paginator import Paginator , PageNotAnInteger , EmptyPage
 from django.views.generic import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin , UserPassesTestMixin
+from django.contrib import messages
+from django.shortcuts import redirect
 
 
 def home(request):
     posts = post.objects.all()
 
-    paginator = Paginator(posts, 6)
+    paginator = Paginator(posts, 4)
 
     page = request.GET.get('page')
 
@@ -65,6 +67,22 @@ def detail(request, post_id) :
     }
     return render(request, 'detail.htm' , context )
 
+
+def post_update (request) :
+    if request.method == "POST":
+       form = Post_Update(request.POST)
+       if form.is_valid :
+          form.save()
+          messages.success(request, 'your Posts is successfully updated')
+          return redirect ('home')
+                   
+    else :
+        form = Post_Update()
+    context = {
+        'title' : 'post_update',
+        'form' : form,
+    }
+    return render(request, 'post_update.htm', context )
 
 
 

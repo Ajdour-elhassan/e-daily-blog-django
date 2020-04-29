@@ -1,10 +1,20 @@
 from django import forms
-from .models import comment
+from .models import comment , post 
 
 class Newcomment (forms.ModelForm) :
     class Meta:
         model = comment
         fields = ( 'name' , 'email' , 'body')
+
+
+
+class Post_Update(forms.ModelForm) :
+    class Meta :
+        model = post
+        fields = ('title' , 'sub_title' , 'content' , 'image')
+
+ 
+
 
 
 

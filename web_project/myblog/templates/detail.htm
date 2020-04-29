@@ -44,12 +44,13 @@
              <div class="border p-4 mb-5 mt-4">
                     {% for comment in comments %}
                      <ul class="p-3 comment">
-                    <h1>{{comment.name}}<h1>
-                    </h5>  {{comment.comment_date|date:'d-m-Y'}}</h5>
-                     <h5>   {{comment.body}} </h5>
+                    <h5>{{comment.name}} : <h5>
+                    <p> " {{comment.body}}   " </p>
+                    <p> last updated : {{comment.comment_date|date:'d-m-Y'}} </p>
+                     <div class="border-bottom mb-3 mt-2"></div>
                     
                         {% empty %}
-                 <h6 class="text-center p-4 mb-3 comment"> no comments </h6>
+                 <h5 class="text-center p-4 mb-3 comment"> no comments </h5>
                 {% endfor %}
              </div>
 
