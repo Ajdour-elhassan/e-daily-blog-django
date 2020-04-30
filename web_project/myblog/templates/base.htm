@@ -7,7 +7,7 @@
      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      {% if title %}
-     <title> e-Daily | {{title}} </title>
+     <title> Daily flibend | {{title}} </title>
      {% else %}
      <title> e-Daily </title>
      {% endif %}
@@ -15,6 +15,8 @@
      <link rel="stylesheet" type="text/css" href="{% static 'css\bootstrap.min.css' %}" >
      <link rel="stylesheet" type="text/css" href="{% static 'css\home.css' %}" >
      <link rel="shortcut" href="{% static 'image\logo.jpg' %}">
+     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
   
      
      
@@ -23,8 +25,8 @@
     
 <section class="image">
      <header>
-      <nav class="navbar  navbar-expand-sm   navbar-light text-color-blue  bg-light" id="nav">
-        <a class= "navbar-brand" href="{% url 'home' %}"> <img src="{% static 'images\logo.jpg' %}" alt="" width="35px">  e-Daily </a>
+      <nav class="navbar  navbar-expand-sm navbar-color-dark navbar-light" >
+        <a class= "navbar-brand" href="{% url 'home' %}"> <img src="{% static 'images\log.jpg' %}" alt="" width="35px"> Daily flibend </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -96,47 +98,151 @@
       </div>
   <!--this is the posts updating-->
 
-<br>
-<br>
-
-<br>
-<br>
   <!-- post_updated ended hre-->
-  
+
 
   <div class="first">
-       <p class="rgb(100, 100, 207)"> <a href="#">  About us : </a> </p> 
+       <p class=""> <a>  About us : </a> </p>
        <img class="img-fluid rounded-circle" src="{% static 'images\hassan.jpg' %}" alt="image" width="60px">
        <div class="container">
       <h5> <p class="font-weight-bolder">  Ajdour Hassan </p> </h4>
-      <h5> <div class="font-weight-normal mt-2"> "Digital Marketer and full stack Software developer"</div></h5>
+      <h5> <div class="font-weight-normal mt-2"> "full stack Software developer"</div></h5>
   </div>
       
 
   <div class="second" >
      <div class="m-2">
-       <h6 style="color: black;"> <a href="contact"> Contact us on social media : </a> </h6>
-       <a  href=""><img src="{% static 'images\facebook.png' %}"  width="20px"> </a>
-       <a  href=""><img src="{% static 'images\instagram.png' %}"  width="20px"> </a>
+        <h6 style="color: black;"> get Contacted with us on social network  :  </h6>
+        <a  href=""><img src="{% static 'images\facebook.png' %}"  width="20px"> </a>
+        <a  href=""><img src="{% static 'images\instagram.png' %}"  width="20px"> </a>
         <a  href="https://web.facebook.com/E-Gatway-102586091298989/"><img src="{% static 'images\twitter.png' %}"  width="20px"> </a>
         <a  href="https://www.youtube.com/channel/UCRw2k2c8YbyXCA8JkXU-yGg?view_as=subscriber"><img src="{% static 'images\youtube.png' %}"  width="20px">  </a>
        </div>
-      </div>
+   </div>
   
     
-    <footer class="third">
+  
 
-     <div class="m-2 color-secondary ">
-    <div class="mt-3">  <small> Created  By Ajdour Hassan </small> </div> 
-    <div class="mt-2"> <small>&copy Copyright Registered 2020 </small> </div>
+  
+<footer class="page-footer font-small fourth ">
+  <div class="row py-4 d-flex align-items-center"> 
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold">Daily Flibend</h6>
+        <img class="img-fluid rounded-circle myimg mt-2" width="40px"
+        src="static\images\3.jpg">
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+          consectetur
+          adipisicing elit.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Products</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="#!">MDBootstrap</a>
+        </p>
+        <p>
+          <a href="#!">MDWordPress</a>
+        </p>
+        <p>
+          <a href="#!">BrandFlow</a>
+        </p>
+        <p>
+          <a href="#!">Bootstrap Angular</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="#!">Your Account</a>
+        </p>
+        <p>
+          <a href="#!">Become an Affiliate</a>
+        </p>
+        <p>
+          <a href="#!">Shipping Rates</a>
+        </p>
+        <p>
+          <a href="#!">Help</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+        <p>
+          <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+        <p>
+          <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+        <p>
+          <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+
+      </div>
     </div>
+    
 
-    </footer>
+</div>
+  <!-- Copyright -->
+  <div class="third">
+    <div class="m-2 color-secondary ">
+      <div class="mt-3">  <small> Created By Ajdour Hassan </small> </div> 
+      <div class="mt-2"> <small>&copy Copyright Registered 2020 </small> </div>
+  </div>
+</div>
+  
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+  <!--footer-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--footer -->
+
+
+
 
     <script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/fontawesome-all.min.js' %}"></script>
+    <script src="{% static 'js/font-awesome-all.min.js' %}"></script>
+
+   
+
 
 
 </body>

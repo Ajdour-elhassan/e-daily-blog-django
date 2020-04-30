@@ -10,8 +10,9 @@
    /* background-color:rgb(14, 13, 13); /*whichever you want*/
    border-bottom : 3px solid #008ed6 ;
    opacity: 0.8;
-   color: #008ed6;
-  /* filter:(opacity=50);   */
+   color: blue;
+   background-color: #FFFFFF;
+   filter:(opacity=50);   
 
 }
 body {
@@ -56,13 +57,14 @@ html,body {
 
 .first {
 
-    background-color: lightcyan;
+    background-color:  #483D8B ;
     text-align: center ;
     padding : 2px 2px 2px 0 ;
-
+    color: antiquewhite;
+    margin-top: 40px ;
 }
 .second {
-    background-color: lightgray;
+    background-color: #3f3fbb ; 
     text-align: center ;
     padding : 8px 8px 8px 0 ;
 }
@@ -71,6 +73,11 @@ html,body {
     background-color: lightslategray;
     text-align: center ;
     padding : 18px 18px 18px 0 ;
+}
+
+.fourth {
+    background-color: black;
+  
 }
 
 
