@@ -1,7 +1,7 @@
 from django.shortcuts import render ,get_object_or_404  #HttpResponse
-from .models import post , comment
+from .models import post , comment , Book
 from django.contrib.auth.models import User
-from .forms import Newcomment , Post_Update
+from .forms import  Newcomment , Post_Update  #, Post_Add
 from django.core.paginator import Paginator , PageNotAnInteger , EmptyPage
 from django.views.generic import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin , UserPassesTestMixin
@@ -10,6 +10,7 @@ from django.shortcuts import redirect
 
 
 def home(request):
+            
     posts = post.objects.all()
 
     paginator = Paginator(posts, 4)
@@ -31,13 +32,6 @@ def home(request):
     }
 
     return render(request, 'home.htm' , context )
-
-
-
-
-
-
-
 
 
 def detail(request, post_id) :
@@ -68,23 +62,17 @@ def detail(request, post_id) :
     return render(request, 'detail.htm' , context )
 
 
-def post_update (request) :
-    if request.method == "POST":
-       form = Post_Update(request.POST)
-       if form.is_valid :
-          form.save()
-          messages.success(request, 'your Posts is successfully updated')
-          return redirect ('home')
-                   
-    else :
-        form = Post_Update()
+
+
+def book (request) :
+    books = Book.objects.all()
+
     context = {
-        'title' : 'post_update',
-        'form' : form,
+        'title' : 'book',
+        'books' : books,
     }
-    return render(request, 'post_update.htm', context )
 
-
+    return render(request, 'book.htm', context )
 
 
 

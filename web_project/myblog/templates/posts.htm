@@ -2,8 +2,8 @@
 <div class="container text-center">
         <div class="row">
          <div class="card mt-3" style="width: 18rem;">
-            <div class="alert alert-primary" role="alert">
-              Latest Posts
+            <div class="alert alert-success" role="alert">
+              Related articles 
             </div>
             <div class="card-body">
               {% for post in posts %}
@@ -11,7 +11,7 @@
                <h5 class="card-title">{{post.title}}</h5>
                <p class="card-text"> {{post.sub_title}} </p>
                <p class="card-text"> last updated : {{post.post_date|date:'d-m-Y'}}  </p>
-               <a href="{% url 'detail' post.id %}" class="btn btn-primary">Read more ...</a>
+               <a href="{% url 'detail' post.id %}" class="btn btn-success">Read more ...</a>
                <p class="border-bottom pb-3 mb-4 mt-4"></p>
                {% endfor %}
              </div>

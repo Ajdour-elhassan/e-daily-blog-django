@@ -12,8 +12,9 @@ urlpatterns = [
     path('detail/<int:post_id>/', views.detail, name='detail'),
     
     # Url for Post_Updating
+    path('book/', views.book , name='book'),
 
-    path('post_update', views.post_update , name='post_update'),
+   # path('post_update', views.post_update , name='post_update'),
 
 ]
 

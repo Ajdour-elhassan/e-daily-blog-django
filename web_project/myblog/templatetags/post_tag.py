@@ -1,5 +1,5 @@
 from django import template
-from myblog.models import post, comment 
+from myblog.models import post, comment
 
 register = template.Library()
 @register.inclusion_tag('posts.htm')
@@ -17,3 +17,4 @@ def latest_comment():
          #comment.objects.filter(active=True)[0:2],
     }
     return context
+

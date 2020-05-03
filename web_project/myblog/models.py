@@ -6,10 +6,10 @@ from django.urls import reverse
 class post(models.Model):
     title = models.CharField(max_length=100)
     sub_title = models.CharField(max_length=60, default='0000000')
-    content = models.TextField()
+    content = models.TextField(max_length=600)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
-    post_date= models.DateTimeField(default=timezone.now)
-    post_update=models.DateTimeField(auto_now=True)
+    post_date = models.DateTimeField(default=timezone.now)
+    post_update = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User , on_delete=models.CASCADE)
     
     #Return to post_name on the above_list
@@ -19,7 +19,7 @@ class post(models.Model):
 
         #Arranagin POST date from new to old date .
     class Meta():
-        ordering = ('-post_date',)
+        ordering = ('-post_update',)
 
 
 # model for (comment_ making comments )
@@ -36,13 +36,35 @@ class comment(models.Model) :
     #Return to comment_owner
     def __str__(self):
         return 'commented {} on  {} .'.format(self.name, self.post)
+    class Meta():
+        ordering = ('-comment_date',)
+
+
+
+class Book (models.Model) :
+            
+    cover = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    title = models.CharField(max_length=50, default="title")
+    headline  = models.CharField(max_length=100, default="sub_title")
+    content = models.TextField(max_length=600)
+    published_date = models.DateField(auto_now=True)
+    book_update = models.TimeField(default=timezone.now)
+    author = models.ForeignKey(User ,on_delete=models.CASCADE)
+
+    def __str__(self) :
+        return 'new_Post : ' + self.title
+    
+    class Meta :
+        ordering = ('-published_date',)
+
+                
+
+
 
 
         #Arraning comment date from new to old date .
 
-    class Meta():
-        ordering = ('-comment_date',)
-
+   
 
 
 #class login(models.Model):

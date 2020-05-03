@@ -15,9 +15,9 @@ urlpatterns = [
     path('logout', views.logout_user, name='logout'),
 
     #url for updating profile
-    path ('profile_update/' , views.profile_update , name='profile_update'),
+   # path ('profile_update/' , views.profile_update , name='profile_update'),
     
     #url for profile
-    path ('profile/', views.profile, name='profile'),
+   # path ('profile/', views.profile, name='profile'),
 
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

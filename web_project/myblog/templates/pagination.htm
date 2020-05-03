@@ -4,7 +4,7 @@
         {% else %}
         <a class="btn btn-success  btn-active disabled"> Next > </a>
         {% endif %}
-        <span class="pd-4 pl-4"> From ... {{page.number}} To {{page.paginator.num_pages}}  </span>
+        <span class="pd-4 pl-4"> from <==> {{page.number}} to {{page.paginator.num_pages}}  </span>
         {% if page.has_previous %}
         <a class="btn btn-success  ml-4 btn-active" href="?page={{page.previous_page_number}}">  < Prev  </a>
         {% else %}
