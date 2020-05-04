@@ -20,7 +20,7 @@ def register (request):
     else:
         form = registerform()
         
-    return render(request, 'register.htm' , {
+    return render(request, 'register.html' , {
         'title': 'register',
         'form': form,
     })
@@ -45,7 +45,7 @@ def login_user(request):
     else :
         form = loginform()
 
-    return render(request, 'login.htm', { 'title' : 'login', 'form' : form,} )
+    return render(request, 'login.html', { 'title' : 'login', 'form' : form,} )
 
 
 def logout_user(request):
@@ -61,7 +61,7 @@ def logout_user(request):
         'title' : 'logout',
         'logOut' : logout_user,
     }
-    return render(request, 'logout.htm' , context)
+    return render(request, 'logout.html' , context)
 
 
 

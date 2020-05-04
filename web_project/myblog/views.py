@@ -32,7 +32,7 @@ def home(request):
 
     }
 
-    return render(request, 'home.htm' , context )
+    return render(request, 'home.html' , context )
     
 
 def about (request) :
@@ -65,7 +65,7 @@ def detail(request, post_id) :
     'comment_form' : comment_form ,
 
     }
-    return render(request, 'detail.htm' , context )
+    return render(request, 'detail.html' , context )
 
 
 
@@ -78,7 +78,7 @@ def book (request) :
         'books' : books,
     }
 
-    return render(request, 'book.htm', context )
+    return render(request, 'book.html', context )
     
 
 def book_detail(request, book_id):
@@ -108,7 +108,7 @@ def book_detail(request, book_id):
         
      
     }
-    return render(request, 'book_detail.htm' , context)
+    return render(request, 'book_detail.html' , context)
     
     
 

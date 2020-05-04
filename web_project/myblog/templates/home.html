@@ -1,4 +1,4 @@
-{% extends 'base.htm' %}
+{% extends 'base.html' %}
 {% block content %}
 {% if messages %}
 {% for message in messages %}
@@ -16,7 +16,7 @@
                 <div class="container">
                     <div class="row text-center">
 
-                        {% include 'posts.htm' %}
+                        {% include 'posts.html' %}
 
 
                     </div>
@@ -26,7 +26,7 @@
                      <!--Second section -->
                     <div class="col-md-8">
 
-                        {% include 'Blogs.htm' %}
+                        {% include 'Blogs.html' %}
                         
                     </div>
 
@@ -38,7 +38,7 @@
 <!-- this is pagiantion -->
 
 <div class="mt-4 text-center">
-   {% include 'pagination.htm' with page=posts %}
+   {% include 'pagination.html' with page=posts %}
 </div>
 
 {% endblock content %}
