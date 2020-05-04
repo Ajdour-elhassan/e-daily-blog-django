@@ -1,0 +1,74 @@
+{% extends 'base.htm' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<section>
+  <header>
+        <div class="container ml-0  mt-4">
+            <div class="row">
+                <div class="col-md-4">
+                   
+                   <!--empty colum-->
+                       
+                 </div>
+                     <!--First Part Started Here-->
+                     <!--Second section -->
+                 <div class="col-md-8">
+                        <div class="card mb-3">
+                          <img class="card-img-top" src="{{book.cover.url}}" alt="picture"  style="height: 18rem;">
+                          <div class="card-body">
+                            <h5 class="card-title">{{book.title}}</h5>
+                            <h5 class="card-title">{{book.content}}</h5>
+                            <p class="card-text"> also subtitle should be added to this part </p>
+                            <p class="card-text"><small class="text-muted">Last updated 1 hour ago </small></p>
+                          </div>
+                       </div>
+                 </div>
+            </div>
+      </div>
+    </header>
+</section>
+
+<section>
+  <header>
+        <div class="container ml-0">
+            <div class="row">
+                <div class="col-md-4">
+                
+                   <!--this is first part -->
+                </div>
+            <!--this second part -->
+            <div class="col-md-8">
+              <h5>Express your view by Comment Here! </h5>
+              <h4 class="border-bottom mt-5 mb-3"> All comments ({{feedbacks.count}})</h4>
+             <div class="border p-4 mb-5 mt-4">
+                    {% for feedback in feedbacks %}
+                     <ul class="p-3 comment">
+                    <h5>{{feedback.name}} : <h5>
+                    <p> " {{feedback.body}}  "  </p>
+                    <p> last updated : {{feedback.feedback_date|date:'d-m-Y'}} </p>
+                     <div class="border-bottom mb-3 mt-2"></div>
+                    
+                    {% empty %}
+                    <h5 class="text-center p-4 mb-3 comment"> no comments </h5>
+                    {% endfor %}
+             </div>
+
+<!-- Comment Form -->
+
+                   <h5>Leave us your feedback in the comments above!</h5>
+                      <form method="POST">
+                        {% csrf_token %}
+                        {{feedback_form|crispy}}
+                        <input class="btn btn-secondary" type="submit" value="Submit">
+                      </form>
+
+          </div>
+       </div>
+    </div>
+</header>
+</section>
+
+
+
+{% endblock content %}

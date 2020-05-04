@@ -26,7 +26,7 @@
 <section class="image">
      <header>
       <nav class="navbar  navbar-expand-sm navbar-color-dark navbar-light" >
-        <a class= "navbar-brand" href="{% url 'home' %}"> <img src="{% static 'images\log.jpg' %}" alt="" width="35px"> Daily flibend </a>
+        <a class= "navbar-brand" href="{% url 'home' %}"> <img src="{% static 'images\log.jpg' %}" alt="" width="35px"> Daily fluency </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,22 +37,13 @@
             <li class="nav-item dropdown">
               <a class="nav-link mr-2" href="{% url 'book' %}"> Library <span class="sr-only">(current)</span></a>
               <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle mr-2" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Courses
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href=""> B1</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href=""> B2 </a> 
-                <a class="dropdown-item" href=""> B3 </a>
-              </div>
-              <li class="nav-item mr-2">
-                <a class="nav-link" href="#"> Blogs  </a>
+                <a class="nav-link mr-2" href="{% url 'book' %}"> Blogs <span class="sr-only">(current)</span></a>
               </li>
-         
-              
-            </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link mr-2" href="{% url 'about' %}"> About <span class="sr-only">(current)</span></a>
+              </li>
           </ul>
+       
           <br>
           <br>
           <br>
@@ -127,11 +118,11 @@
 
 
   <div class="first">
-       <p style="color : white;"> <a>  About us : </a> </p>
+       <p style="color : white;"> <a href="{% url 'about' %}">  About us : </a> </p>
        <img class="img-fluid rounded-circle" src="{% static 'images\hassan.jpg' %}" alt="image" width="60px">
        <div class="container">
       <h5> <p class="font-weight-bolder" style="color:rgb(235, 235, 235);">  Ajdour Hassan </p> </h4>
-      <h5> <div class="font-weight-norma mt-2"> << full stuck web developer and Digital Marketer >> </div></h5>
+      <h5> <div class="font-weight-norma mt-2"> "full stuck web developer" </div></h5>
   </div>
       
 

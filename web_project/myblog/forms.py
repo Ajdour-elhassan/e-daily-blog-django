@@ -1,15 +1,16 @@
 from django import forms
-from .models import comment , post
+from .models import comment , post , Book , Feedback
 
 class Newcomment (forms.ModelForm) :
     class Meta:
         model = comment
         fields = ( 'name' , 'email' , 'body')
 
-class Post_Update(forms.ModelForm) :
+class FeedbackForm (forms.ModelForm) :
+
     class Meta :
-        model = post
-        fields = ('title' , 'sub_title' , 'content' , 'image')
+        model = Feedback
+        fields = ('name', 'email' , 'body' )
 
 
 

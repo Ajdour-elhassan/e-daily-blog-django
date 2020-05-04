@@ -1,12 +1,13 @@
-from django.shortcuts import render ,get_object_or_404  #HttpResponse
-from .models import post , comment , Book
+from django.shortcuts import render , get_object_or_404  #HttpResponse
+from .models import post , comment , Book , Feedback
 from django.contrib.auth.models import User
-from .forms import  Newcomment , Post_Update  #, Post_Add
+from .forms import  Newcomment , FeedbackForm #Post_Update  #, Post_Add
 from django.core.paginator import Paginator , PageNotAnInteger , EmptyPage
 from django.views.generic import CreateView
-from django.contrib.auth.mixins import LoginRequiredMixin , UserPassesTestMixin
-from django.contrib import messages
-from django.shortcuts import redirect
+from webbrowser import get
+#from django.contrib.auth.mixins import LoginRequiredMixin , UserPassesTestMixin
+#from django.contrib import messages
+#from django.shortcuts import redirect
 
 
 def home(request):
@@ -32,6 +33,11 @@ def home(request):
     }
 
     return render(request, 'home.htm' , context )
+    
+
+def about (request) :
+    return render(request, 'about.html' , { 'title' : 'about'})
+
 
 
 def detail(request, post_id) :
@@ -73,6 +79,38 @@ def book (request) :
     }
 
     return render(request, 'book.htm', context )
+    
+
+def book_detail(request, book_id):
+            
+    book = get_object_or_404(Book, pk=book_id)
+    feedbacks = book.feedbacks.filter(active=True)
+
+    if request.method == "POST" :
+       feedback_form = FeedbackForm(data=request.POST)
+       if feedback_form.is_valid() :
+          new_feedback = feedback_form.save(commit=False) # (commit=False) => Dont save data 
+         # determine which book_id to related this feedback  => { new_feedback.book = book } 
+          new_feedback.book = book
+          new_feedback.save()
+          feedback_form = FeedbackForm()
+
+    else :
+                
+       feedback_form = FeedbackForm()
+        
+    context = {
+
+        'title' : book,
+        'book' : book ,
+        'feedbacks' : feedbacks ,
+        'feedback_form' : feedback_form,
+        
+     
+    }
+    return render(request, 'book_detail.htm' , context)
+    
+    
 
 
 

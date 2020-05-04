@@ -3,9 +3,9 @@ from myblog.models import post, comment
 
 register = template.Library()
 @register.inclusion_tag('posts.htm')
-def latest_posts():
+def posts():
     context = {
-        'l_posts': post.objects.all()[0:3],
+        'posts': post.objects.all()[0:3],
     }
     return context
 
