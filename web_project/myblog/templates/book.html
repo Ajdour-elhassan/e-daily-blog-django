@@ -11,7 +11,7 @@
                           <div class="row text-center">
                           
                             <!-- Empty coloum -->
-                            {% include 'posts.html' %}
+                            {% include 'library.html' %}
       
       
                           </div>
@@ -27,6 +27,7 @@
                                         <div class="card-body">
                                           <h5 class="card-title">{{book.title}}</h5>
                                           <h5 class="card-title">{{book.headline}}</h5>
+                                          <h5 class="card-title">{{book.content|linebreaks}}</h5>
                                           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                           <p class="card-text"><small class="text-muted">Last updated 1 hour ago </small></p>
                                           <a href="{% url 'book_detail' book.id %}" class="btn btn-success">Read more ...</a>
@@ -40,7 +41,14 @@
         </header>
 </section>
 
+                  
+            <!-- this is pagiantion -->
 
+          <div class="mt-4 text-center">
+       {% include 'book_paginator.html' with page=books %}
+          </div>
+
+          <!-- ended_up tag pagiantion -->
 
 
 {% endblock content %}

@@ -72,10 +72,23 @@ def detail(request, post_id) :
 
 def book (request) :
     books = Book.objects.all()
+    # set paginator variable (paginator)
+    paginator = Paginator(books, 2)
+
+    page = request.GET.get('page')
+
+    try :
+        books = paginator.page(page)
+    except PageNotAnInteger :
+        books = paginator.page(1)
+    except EmptyPage :
+        books = paginator.page(paginator.num_page)
+
 
     context = {
         'title' : 'book',
         'books' : books,
+        'Book'  : page,
     }
 
     return render(request, 'book.html', context )
@@ -89,8 +102,8 @@ def book_detail(request, book_id):
     if request.method == "POST" :
        feedback_form = FeedbackForm(data=request.POST)
        if feedback_form.is_valid() :
-          new_feedback = feedback_form.save(commit=False) # (commit=False) => Dont save data 
-         # determine which book_id to related this feedback  => { new_feedback.book = book } 
+          new_feedback = feedback_form.save(commit=False) # (commit=False) => Don't save data 
+         # until you  determine which (book_id) to related this feedback  => { new_feedback.book = book } 
           new_feedback.book = book
           new_feedback.save()
           feedback_form = FeedbackForm()

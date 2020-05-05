@@ -1,20 +1,27 @@
 from django import template
-from myblog.models import post, comment
+from myblog.models import post, comment , Book
+
+
+
 
 register = template.Library()
-@register.inclusion_tag('posts.htm')
-def posts():
+@register.inclusion_tag('library.html')
+def library():
     context = {
-        'posts': post.objects.all()[0:3],
+        
+        'books' : Book.objects.all()[0:1],
+
     }
     return context
 
-@register.inclusion_tag('latest_comment.htm')
-def latest_comment():
+
+
+@register.inclusion_tag('posts.html')
+def posts():
     context = {
-        
-        'l_comments': comment.objects.all()[0:7],
-         #comment.objects.filter(active=True)[0:2],
+        'posts': post.objects.all()[0:2],
     }
     return context
+
+
 
