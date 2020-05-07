@@ -19,7 +19,7 @@ def library():
 @register.inclusion_tag('posts.html')
 def posts():
     context = {
-        'posts': post.objects.all()[0:2],
+        'l_posts': post.objects.all()[0:3],
     }
     return context
 

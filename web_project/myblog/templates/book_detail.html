@@ -40,8 +40,8 @@
             <!--this second part -->
             <div class="col-md-8">
               <h5>Express your view by Comment Here! </h5>
-              <h4 class="border-bottom mt-5 mb-3"> All comments ({{feedbacks.count}})</h4>
-             <div class="border p-4 mb-5 mt-4">
+              <button type="button" class="btn btn-outline-success"> All feedbacks ({{feedbacks.count}}) </button>
+                <div class="border p-4 mb-5 mt-4"> 
                     {% for feedback in feedbacks %}
                      <ul class="p-3 comment">
                     <h5>{{feedback.name}} : <h5>
@@ -60,7 +60,7 @@
                       <form method="POST">
                         {% csrf_token %}
                         {{feedback_form|crispy}}
-                        <input class="btn btn-secondary" type="submit" value="Submit">
+                        <input class="btn btn-success" type="submit" value="Submit">
                       </form>
 
           </div>

@@ -7,10 +7,9 @@
 
 .navbar {
     
-   /* background-color:rgb(14, 13, 13); /*whichever you want*/
    border-bottom : 3px solid #008ed6 ;
-   opacity: 0.8;
-   background-color: white;
+   opacity: 0.8 ;
+   background-color: white ;
 
 }
 body {
@@ -28,7 +27,7 @@ html,body {
 
 .image {
 
-    background-image: url('business.jpg') ;
+    background-image: url('2.jpg') ;
     background-size: cover;
     background-position: center center;
     height: 400px ;
@@ -56,14 +55,14 @@ html,body {
 
 .first {
 
-    background-color: #4a148c ;
+    background-color: #2e86c1 ;
     text-align: center ;
     padding : 2px 2px 2px 0 ;
     color: antiquewhite;
     margin-top: 40px ;
 }
 .second {
-    background-color: #3f3fbb ; 
+    background-color: #3f3fbb ;
     text-align: center ;
     padding : 8px 8px 8px 0 ;
 }

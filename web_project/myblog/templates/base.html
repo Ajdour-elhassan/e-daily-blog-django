@@ -17,51 +17,51 @@
      <link rel="shortcut" href="{% static 'image\logo.jpg' %}">
      <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-  
-     
-     
 </head>
 <body>
-    
-<section class="image">
-     <header>
-      <nav class="navbar  navbar-expand-sm navbar-color-dark navbar-light" >
-        <a class= "navbar-brand" href="{% url 'home' %}"> <img src="{% static 'images\log.jpg' %}" alt="" width="35px"> Daily fluency </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto ">
-            <li class="nav-item active">
-              <a class="nav-link mr-2" href="{% url 'home' %}"> Home <span class="sr-only">(current)</span></a>
-            <li class="nav-item dropdown">
-              <a class="nav-link mr-2" href="{% url 'book' %}"> Library <span class="sr-only">(current)</span></a>
-              <li class="nav-item dropdown">
-                <a class="nav-link mr-2" href="{% url 'book' %}"> Blogs <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link mr-2" href="{% url 'about' %}"> About <span class="sr-only">(current)</span></a>
-              </li>
-          </ul>
-       
-          <br>
-          <br>
-          <br>
-          {% if user.is_authenticated %}
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href=""> {{user.username}} </a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">  Logout </a>
-            </li>
-          </ul>
-          {% else %}
-          <ul class="navbar-nav">
-            <li class="nav-i tem"><a class="nav-link" href="{% url 'register' %}"> Sign Up  </a></li> 
-            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">  Sign in </a></li>
-          </ul>
-          {% endif %}
-        </div>
-      </nav>
-    </header>
+    <!--Main Navigation-->
+<section class="image" >
+<header>
+  <nav class="navbar  navbar-expand-lg navbar-light  scrolling-navbar">
+    <a class="navbar-brand" href="{% url 'home' %}"> <img src="{% static 'images\log.jpg' %}" alt="" width="40px"> Daily flibend </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'home' %}"> Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'book' %}"> Library </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home' %}"> Blogs </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}"> About </a>
+        </li>
+      </ul>
+      {% if user.is_authenticated %}
+      <ul class="navbar-nav">
+           <li class="nav-item"><a class="nav-link" href=""> {{user.username}} </a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">  Logout </a>
+          </li>
+      </ul>
+      {% else %}
+      <ul class="navbar-nav">
+        <li class="nav-i tem"><a class="nav-link" href="{% url 'register' %}"> Sign Up  </a></li> 
+           <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">  Sign in </a></li>
+      </ul>
+      {% endif %}
+    </div>
+  </nav>
+</header>
+
+<!--Main Navigation-->
+
+
 <div class="container">
 <div class="row">
   <div class="col-md-8">
@@ -110,15 +110,21 @@
       <div> 
           {% block content %}
 
+
+
+        
+
           {% endblock content %}
+          
       </div>
   <!--this is the posts updating-->
 
   <!-- post_updated ended hre-->
 
+ 
 
   <div class="first">
-       <p style="color : white;"> <a href="{% url 'about' %}">  About us : </a> </p>
+       <p style="color: black;">   About us : </a> </p>
        <img class="img-fluid rounded-circle" src="{% static 'images\hassan.jpg' %}" alt="image" width="60px">
        <div class="container">
       <h5> <p class="font-weight-bolder" style="color:rgb(235, 235, 235);">  Ajdour Hassan </p> </h4>
@@ -244,8 +250,8 @@
 
 
     <script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
-    <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/fontawsome-all.min.js' %}"></script>
 
     
