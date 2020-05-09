@@ -4,12 +4,14 @@
 
  <section>
         <header>
-                 <div class="container mr-0 mt-5">
-                    <div class="row mr-4">
+                 <div class="container mr-2 mt-5">
+                    <div class="row">
                            <!--First Part Started Here-->
-                          <div class="col-md-8 ">
-                          <div class="row">
+                          <div class="col-md-8">
+                          <div class="row mr-5">
+                              
                                 {% for book in books %}
+          
 
                                 <div class="card mb-3" >
                                         <img class="card-img-" src="{{book.cover.url}}" alt="Card image cap"  style="height: 18rem;">
@@ -26,15 +28,17 @@
                                 {% endfor %}
                               </div> 
                               </div>
-                                <div class="col-md-4 text-center mr-0">
-                               
-                                    <div class="row ml-4">
+                                <div class="col-md-4 text-center">
+                                <div class="container"> 
+                                    <div class="row ml-5">
                           
                     
                                             {% include 'library.html' %}
+                                            
+                                    
       
       
-                               
+                               </div>
                                 </div>
                                </div>
                     </div>

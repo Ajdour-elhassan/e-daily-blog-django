@@ -36,7 +36,7 @@ html,body {
 .title{
     
     text-align: center;
-    color: white ;
+    color: #a3acff;
     font-size: medium;
     font-style: normal;
 
@@ -55,7 +55,7 @@ html,body {
 
 .first {
 
-    background-color: #2e86c1 ;
+    background-color: #008080 ;
     text-align: center ;
     padding : 2px 2px 2px 0 ;
     color: antiquewhite;

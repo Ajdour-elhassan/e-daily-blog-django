@@ -16,8 +16,8 @@ def library():
 
 
 
-@register.inclusion_tag('posts.html')
-def posts():
+@register.inclusion_tag('postsx.html')
+def l_posts():
     context = {
         'l_posts': post.objects.all()[0:3],
     }
