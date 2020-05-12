@@ -7,7 +7,7 @@
      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      {% if title %}
-     <title> Daily flibend | {{title}} </title>
+     <title> ShareMarket | {{title}} </title>
      {% else %}
      <title> e-Daily </title>
      {% endif %}
@@ -23,8 +23,8 @@
     <!--Main Navigation-->
 <section class="image" >
 <header>
-  <nav class="navbar  navbar-expand-lg navbar-light  scrolling-navbar">
-    <a class="navbar-brand" href="{% url 'home' %}"> <img src="{% static 'images\log.jpg' %}" alt="" width="40px"> Daily flibrend </a>
+  <nav class="navbar  navbar-expand-lg navbar-light role="navigation" scrolling-navbar">
+    <a class="navbar-brand" href="{% url 'home' %}"> <img src="{% static 'images\log.jpg' %}" alt="" width="40px"> ShareMarket </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -68,13 +68,13 @@
   <div class="col-md-8">
     <div class="title mt-4">
       <div class="mt-4">
-        <h3>  Daily flibend PlatForm </h3>
+        <h3>  ShareMarket PlatForm </h3>
           </div>
             <div class="mt-1">
-              <h5> <i class="fas fa-check-circle"></i> Discover new Marketing tools and   </h5>
+              <h5> <i class="fas fa-check-circle"></i> Discover new Marketing tools And   </h5>
                 </div>
             <div class="mt-1">
-              <h5>  <i class="fas fa-check-circle"></i> Stay connected to the world of marketing and technology   </h5>
+              <h5>  <i class="fas fa-check-circle"></i> Stay connected to the world of marketing and new technology   </h5>
             </div>
             <div class="mt-3">
               <h5>  <i class="fas fa-check-circle"></i> Expand your Reading   </h5>
@@ -86,7 +86,7 @@
                   <h5>  <i class="fas fa-check-circle"></i>  Sign Up And Get Started </h6>
               </div>
            <div class="text-center mt-4">
-           <a class="btn  btn-secondary btn-active bg-success" href="{% url 'login' %}"> Join for free </a>
+           <a class="btn btn-active bg-success " href="{% url 'login' %}"> Join for free </a>
       </div>
    </div>
 </div>
@@ -121,23 +121,15 @@
 
  
 
-  <div class="first">
-       <p style="color: black;">   About us : </a> </p>
-       <img class="img-fluid rounded-circle" src="{% static 'images\hassan.jpg' %}" alt="image" width="60px">
-       <div class="container">
-      <h5> <p class="font-weight-bolder" style="color:rgb(235, 235, 235);">  Ajdour Hassan </p> </h4>
-      <h5> <div class="font-weight-norma mt-2"> " full stuck web developer " </div></h5>
-  </div>
 
-  <div class="second" >
-     <div class="mt-2">
+
+  <div class="second mt-5 " >
           <!-- Social Network -->
             <p class="font-weight-bold" style="color: white ;"> Get  Contactzs with us on Social Networks : <p>
             <a class="mr-2"  href="#"><img src="{% static 'images\facebook.png' %}"  width="25px"> </a>
             <a class="mr-2"  href="#"><img src="{% static 'images\instagram.png' %}"  width="25px"> </a>
             <a class="mr-2"  href="https://web.facebook.com/E-Gatway-102586091298989/"><img src="{% static 'images\twitter.png' %}"  width="25px"> </a>
             <a class="mr-2"  href="https://www.youtube.com/channel/UCRw2k2c8YbyXCA8JkXU-yGg?view_as=subscriber"><img src="{% static 'images\youtube.png' %}"  width="28px">  </a>
-       </div>
    </div>
   
     
@@ -146,14 +138,12 @@
   <div class="row py-4 d-flex align-items-center">
       <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
            <!-- Content -->
-        <h6 class="text-uppercase font-weight-bold"> Our team : </h6>
-        <h6 class="text-uppercase font-weight-bold">Daily Flibend</h6>
-        <img class="img-fluid rounded-circle myimg mt-4" width="40px"
-        src="static\images\3.jpg">
+        <h6 class="text-uppercase font-weight-bold"> About us : </h6>
+        <img class="img-fluid rounded-circle myimg mt-4" style="width=25px height=25px"
+        src="{% static 'images\hassan.jpg' %}"
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-          consectetur
-          adipisicing elit.</p>
+        <h5> Hassan Ajdour </h5>
+        <p> "Web Developer,and Digital marketer "</p>
       </div>
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 
@@ -220,7 +210,7 @@
   <div class="third">
     <div class="m-2 color-secondary ">
       <div class="mt-3">  <small> Created By Ajdour Hassan </small> </div>
-      <div class="mt-2"> <small>&copy Copyright Registered 2020  :  Dailyflibrend.com </small> </div>
+      <div class="mt-2"> <small>&copy Copyright Registered 2020  :  ShareMarket.com </small> </div>
   </div>
 </div>
   
@@ -232,43 +222,13 @@
 
 
 
-
-
-
-
-
-
-
-
-
-  <!--footer -->
-
-
-
-
     <script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/fontawsome-all.min.js' %}"></script>
+ 
 
-<!-- 
-function checkScroll(){
-        var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
-            
-        if($(window).scrollTop() > startY){
-         $('.navbar').addClass("scrolled");
-        }else{
-              $('.navbar').removeClass("scrolled");
-                }
-            }
-            
-        if($('.navbar').length > 0){
-                $(window).on("scroll load resize", function(){
-                    checkScroll();
-         });
-        }
 
-    -->
 
    
 

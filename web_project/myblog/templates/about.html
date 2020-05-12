@@ -1,6 +1,64 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="container mt-5">
+<div class="row">
+  <div class="col-md-2">
+  <!--Empy column-->
+  </div>
+<div class="col-md-8">
+<div class="card  text-center" >
+  <div class="card-header bg-success">
+    About us :
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Hello! Dear reader,</h5>
+    <p class="card-text">Welcome to ShareMarket platform , Be ready to dive in!</p>
+     <p class="card-text">
+     ShareMarket.com is the platform where you will find the all new updated information
+     about Digital marketing, web marketing, mobile world reviews , and a lot more in the category list.
+     Our most important purpose of this platform is to provide all tools and knowledge related to updates
+     information to our readers and technology freaks. we struggle everyday to deliver you the reliable 
+     knowledge of Digital marketing and applying new technologies the world.</p>
+     <p> if you would like to know more , get connected with us via social media : </p>
+     <div class="col-md-6 col-lg-8 text-center text-md-right">
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fab fa-facebook-f white-text mr-4"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter white-text mr-4"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fab fa-google-plus-g white-text mr-4"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fab fa-linkedin-in white-text mr-4"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fab fa-instagram white-text"> </i>
+          </a>
+        </div>
+
+    <a href="{% url 'home' %}" class="btn btn-success mt-4"> Back Home </a>
+  </div>
+  <div class="card-footer text-muted">
+   ShareMarket.com
+  </div>
+</div>
+ </div>
+ 
+    <div class="col-md-2">
+      <!--Empy column-->
+    </div>
+
+</div>
+</div>
 
 
-<h3 class="border-bottom">who am I ?</h3>
+
+
 {% endblock content %}

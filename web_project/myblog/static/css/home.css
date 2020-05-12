@@ -27,7 +27,7 @@ html,body {
 
 .image {
 
-    background-image: url('2.jpg') ;
+    background-image: url('e.jpg') ;
     background-size: cover;
     background-position: center center;
     height: 400px ;
@@ -36,15 +36,15 @@ html,body {
 .title{
     
     text-align: center;
-    color: #a3acff;
+    color: black ;
     font-size: medium;
     font-style: normal;
 
 }
 .myimg{
 
-    width: 150px;
-    height: 150px;
+    width: 350px;
+    height: 350px;
     display: block;
     margin : 0 auto ;
     padding-bottom: 10px;
@@ -53,34 +53,24 @@ html,body {
 
 
 
-.first {
-
-    background-color: #008080 ;
-    text-align: center ;
-    padding : 2px 2px 2px 0 ;
-    color: antiquewhite;
-    margin-top: 40px ;
-}
 .second {
-    background-color: #3f3fbb ;
+    background-color:  #2e86c1  ;
     text-align: center ;
     padding : 8px 8px 8px 0 ;
 }
 .third {
 
-    background-color: lightslategray;
+    background-color: lightslategray ;
     text-align: center ;
     padding : 18px 18px 18px 0 ;
+    color: black;
 }
 
 .fourth {
-    background-color: black;
+    background-color: #0a2a47 ;
+    color : white;
+    text-align: center;
+    
   
 }
 
-
-
-
-
-
-    
