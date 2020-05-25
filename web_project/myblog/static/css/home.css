@@ -6,16 +6,30 @@
 }  */
 
 .navbar {
-    
-   border-bottom : 3px solid #008ed6 ;
+
+   border-bottom : 3px solid #e7eff3 ;
    opacity: 0.8 ;
-   background-color: white ;
+   background-color:  #0a2a47 ; 
+}
+li:hover {
+    background-color: rgb(108, 169, 226);
 
 }
+li:active{
+    background-color: rgb(63, 63, 126);
+
+}
+.gmi{
+    
+    height: 200px;
+}
+
 body {
 
     background-color : #f2f4f4  ;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /*font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family: 'Gill Sans', sans-serif;
+    font-weight: 600;
 }
 
 html,body {
@@ -27,7 +41,7 @@ html,body {
 
 .image {
 
-    background-image: url('e.jpg') ;
+    background-image: url('../images/e.jpg') ;
     background-size: cover;
     background-position: center center;
     height: 400px ;
@@ -67,10 +81,10 @@ html,body {
 }
 
 .fourth {
+    
     background-color: #0a2a47 ;
     color : white;
     text-align: center;
-    
-  
+
 }
 

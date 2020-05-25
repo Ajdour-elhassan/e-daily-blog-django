@@ -5,7 +5,7 @@ from django.urls import reverse
 
 class post(models.Model):
     title = models.CharField(max_length=100)
-    sub_title = models.CharField(max_length=60, default='0000000')
+    sub_title = models.CharField(max_length=60, default='')
     content = models.TextField(max_length=600)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
     post_date = models.DateTimeField(default=timezone.now)
@@ -42,7 +42,7 @@ class comment(models.Model) :
 
 
 class Book (models.Model) :
-            
+
     cover = models.ImageField(default='default.jpg', upload_to='profile_pics')
     title = models.CharField(max_length=50, default="title")
     headline  = models.CharField(max_length=100, default="sub_title")
