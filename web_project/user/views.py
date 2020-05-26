@@ -35,11 +35,11 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            messages.success(request, ('Congarate! {} Logged in successfully, Here is Your Profile'.format(username)))
+            messages.success(request, ('Welcome {} to Homepage enjoy reading '.format(username)))
             return redirect('home')
 
         else:
-            messages.warning(request, ' Username or password is not Corerrect! try again')
+            messages.warning(request, ' Username or password is not Corerrect! Please try again!')
             #return redirect('login')
     
     else :
@@ -50,13 +50,10 @@ def login_user(request):
 
 def logout_user(request):
             
-    logout_user = logout(request)
-    if request.method == request :
-       return redirect('home')
-    else :
-        logout_user = logout(request)
- 
+    if logout_user == logout(request) :
+        return redirect('home')
 
+  
     context = {
         'title' : 'logout',
         'logOut' : logout_user,
