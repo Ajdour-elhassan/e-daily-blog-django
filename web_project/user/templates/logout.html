@@ -1,15 +1,57 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load crispy_forms_tags %}
-<br>
-<br>
-<div class="container">
-<div class="border p-4 mt-5 col-4">
+ <div class="container mt-5">
 <div class="row">
-    <h3> Logout </h3>
-        <small> You logged out successfully , would you like to re-log_In ! <a href="{% url 'login' %}"> Sign in </a></small>
+  <div class="col-md-2">
+  <!--Empy column-->
+  </div>
+<div class="col-md-8">
+<div class="card  text-center" >
+  <div class="card-header bg-success">
+    log out
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"> You logged out Safely and Successfully! </h5>
+    <p class="card-text">Welcome to Diesemart platform </p>
+     <p class="card-text"> If Would you like to log in again click here:
+      <a href="{% url 'login' %}" class="text-green"> Sign in! </a> </p>
+     <p>Get connected with us via social media : </p>
+     <div class="col-md-6 col-lg-8 text-center text-md-right">
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fab fa-facebook-f white-text mr-4"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter white-text mr-4"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fab fa-google-plus-g white-text mr-4"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fab fa-linkedin-in white-text mr-4"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fab fa-instagram white-text"> </i>
+          </a>
+        </div>
+
+    <a href="{% url 'home' %}" class="btn btn-success mt-4"> Back Home </a>
+  </div>
+  <div class="card-footer text-muted">
+   Diesemart.com
+  </div>
 </div>
-</div>
+ </div>
+ 
+    <div class="col-md-2">
+      <!--Empy column-->
+    </div>
+
 </div>
 </div>
 {% endblock content %}

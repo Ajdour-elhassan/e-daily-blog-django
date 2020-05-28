@@ -19,10 +19,7 @@ li:active{
     background-color: rgb(63, 63, 126);
 
 }
-.gmi{
-    
-    height: 200px;
-}
+
 
 body {
 
@@ -41,29 +38,40 @@ html,body {
 
 .image {
 
-    background-image: url('../images/e.jpg') ;
+    background-image: url('../images/d.jpg') ;
     background-size: cover;
     background-position: center center;
     height: 400px ;
 
 }
+
 .title{
-    
+    margin-top: 60px;
     text-align: center;
-    color: black ;
+    color: #f2f4f4  ;
     font-size: medium;
     font-style: normal;
-
 }
 .myimg{
 
-    width: 350px;
-    height: 350px;
+    width: 400px;
+    height: 400px;
     display: block;
     margin : 0 auto ;
     padding-bottom: 10px;
+    
 }
 
+.m.btn:hover {
+    background-color: aquamarine;
+    color: red;
+
+}
+.m.btn:active {
+    background-color: aquamarine;
+    
+
+}
 
 
 
@@ -72,6 +80,7 @@ html,body {
     text-align: center ;
     padding : 8px 8px 8px 0 ;
 }
+
 .third {
 
     background-color: lightslategray ;
@@ -86,5 +95,9 @@ html,body {
     color : white;
     text-align: center;
 
+}
+
+.gmi{
+    height: 200px;
 }
 
