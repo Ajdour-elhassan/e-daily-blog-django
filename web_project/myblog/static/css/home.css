@@ -6,11 +6,10 @@
 }  */
 
 .navbar {
-
    border-bottom : 3px solid #e7eff3 ;
-   opacity: 0.8 ;
-   background-color:  #0a2a47 ; 
+   background-color:  #0a2a47 ;
 }
+
 li:hover {
     background-color: rgb(108, 169, 226);
 
@@ -41,16 +40,14 @@ html,body {
     background-image: url('../images/d.jpg') ;
     background-size: cover;
     background-position: center center;
-    height: 400px ;
+    height: 450px ;
 
 }
 
 .title{
     margin-top: 60px;
-    text-align: center;
-    color: #f2f4f4  ;
-    font-size: medium;
-    font-style: normal;
+    text-align: center ;
+    color:  #ffffff   ;
 }
 .myimg{
 
@@ -60,17 +57,6 @@ html,body {
     margin : 0 auto ;
     padding-bottom: 10px;
     
-}
-
-.m.btn:hover {
-    background-color: aquamarine;
-    color: red;
-
-}
-.m.btn:active {
-    background-color: aquamarine;
-    
-
 }
 
 
