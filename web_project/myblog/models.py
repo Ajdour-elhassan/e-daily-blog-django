@@ -4,10 +4,9 @@ from django.utils import timezone
 from django.urls import reverse
 
 class post(models.Model):
-    title = models.CharField(max_length=100)
-    sub_title = models.CharField(max_length=60, default='')
-    content = models.TextField(max_length=600)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    title = models.CharField(max_length=100)
+    content = models.TextField(max_length=600)
     post_date = models.DateTimeField(default=timezone.now)
     post_update = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User , on_delete=models.CASCADE)
@@ -15,7 +14,7 @@ class post(models.Model):
     #Return to post_name on the above_list
 
     def __str__(self):
-        return self.title
+        return (f'Post_title : {self.title}')
 
         #Arranagin POST date from new to old date .
     class Meta():
@@ -45,7 +44,6 @@ class Book (models.Model) :
 
     cover = models.ImageField(default='default.jpg', upload_to='profile_pics')
     title = models.CharField(max_length=50, default="title")
-    headline  = models.CharField(max_length=100, default="sub_title")
     content = models.TextField()
     published_date = models.DateField(auto_now=True)
     book_update = models.TimeField(default=timezone.now)

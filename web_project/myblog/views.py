@@ -14,7 +14,7 @@ def home(request):
             
     posts = post.objects.all()
 
-    paginator = Paginator(posts, 4)
+    paginator = Paginator(posts, 3)
 
     page = request.GET.get('page')
 
@@ -73,7 +73,7 @@ def detail(request, post_id) :
 def book (request) :
     books = Book.objects.all()
     # set paginator variable (paginator)
-    paginator = Paginator(books, 2)
+    paginator = Paginator(books, 4)
 
     page = request.GET.get('page')
 

@@ -7,10 +7,9 @@
               Related articles
             </div>
             <div class="card-body">
-              {% for post in posts %}
+              {% for post in posts reversed %}
                <p><img src="{{post.image.url}}" class="img-fluid rounded-circle " style="width: 70px; height:70px;"> </p>
-               <h5 class="card-title">{{post.title}}</h5>
-               <p class="card-text"> {{post.sub_title}} </p>
+               <p class="card-title">{{post.title}}</p>
                <p class="card-text"> last updated : {{post.post_date|date:'d-m-Y'}}  </p>
                <a href="{% url 'detail' post.id %}" class="btn btn-success">Read more ...</a>
                <p class="border-bottom pb-3 mb-4 mt-4"></p>

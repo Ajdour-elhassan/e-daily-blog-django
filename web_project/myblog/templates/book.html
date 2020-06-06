@@ -16,10 +16,12 @@
                                 <div class="card mb-3" >
                                         <img class="card-img-" src="{{book.cover.url}}" alt="Card image cap"  style="height: 18rem;">
                                         <div class="card-body">
-                                          <h5 class="card-title">{{book.title}}</h5>
-                                          <h5 class="card-title">{{book.headline}}</h5>
-                                          <h5 class="card-title">{{book.content|linebreaks}}</h5>
-                                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                          <p class="card-title">{{book.headline}}</p>
+                                           {% if book.content|length >= 120 %}
+                                           {{book.content|slice:'100'}} ...
+                                           {% else %}
+                                          <p class="card-text">{{book.content|linebreaks}}</p>
+                                          {% endif %}
                                           <p class="card-text"><small class="text-muted">Last updated 1 hour ago </small></p>
                                           <a href="{% url 'book_detail' book.id %}" class="btn btn-success">Read more ...</a>
                 
