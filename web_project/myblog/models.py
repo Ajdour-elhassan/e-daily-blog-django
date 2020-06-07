@@ -6,7 +6,7 @@ from django.urls import reverse
 class post(models.Model):
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
     title = models.CharField(max_length=100)
-    content = models.TextField(max_length=600)
+    content = models.TextField()
     post_date = models.DateTimeField(default=timezone.now)
     post_update = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User , on_delete=models.CASCADE)
@@ -43,7 +43,7 @@ class comment(models.Model) :
 class Book (models.Model) :
 
     cover = models.ImageField(default='default.jpg', upload_to='profile_pics')
-    title = models.CharField(max_length=50, default="title")
+    title = models.CharField(max_length=100, default="title")
     content = models.TextField()
     published_date = models.DateField(auto_now=True)
     book_update = models.TimeField(default=timezone.now)
