@@ -29,7 +29,7 @@
                                         <div class="card-body">
                                           <p class="card-title">{{post.title}}</p>
                                           {% if post.content|length > 120 %}
-                                          {{post.content|slice:'110'}} ...
+                                          {{post.content|slice:'100'}} (...)
                                           {% else %}
                                           <p class="card-text">{{post.content|linebreaks}}</p>
                                           {% endif %}

@@ -16,9 +16,10 @@
                                 <div class="card mb-3" >
                                         <img class="card-img-" src="{{book.cover.url}}" alt="Card image cap"  style="height: 18rem;">
                                         <div class="card-body">
+                                            <p class="card-title">{{book.title}}</p>
                                           <p class="card-title">{{book.headline}}</p>
                                            {% if book.content|length >= 120 %}
-                                           {{book.content|slice:'100'}} ...
+                                           {{book.content|slice:'100'}} (...)
                                            {% else %}
                                           <p class="card-text">{{book.content|linebreaks}}</p>
                                           {% endif %}

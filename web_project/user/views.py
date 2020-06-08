@@ -35,7 +35,7 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            messages.success(request, ('Welcome {} to Diesemart platform , Enjoy reading! '.format(username)))
+            messages.success(request, (" Welcome '{}' to Diesefive platform , Expand Your Knowledge about Digital Marketing and learn how to build your own Business! ".format(username)))
             return redirect('home')
 
         else:
