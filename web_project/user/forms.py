@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 #from .models import Profile
 
+
 #class FormUpdate(forms.ModelForm):
    #username = forms.CharField(max_length=30)
    # first_name = forms.CharField(label="First_name")
@@ -46,7 +47,6 @@ class registerform(forms.ModelForm) :
 
 
     def clean_password2(self):
-
         cd = self.cleaned_data
         if cd ['password1'] != cd ['password2'] :
             raise forms.ValidationError('Password match, please try again')

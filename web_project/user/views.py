@@ -15,7 +15,7 @@ def register (request):
             new_user.set_password(form.cleaned_data['password1'])
             new_user.save()
             messages.success(request, 'Congrats! {} registered successfully! login in here'.format(new_user))
-            return redirect('login')
+            return redirect('home')
 
     else:
         form = registerform()
@@ -36,12 +36,11 @@ def login_user(request):
         if user is not None:
             login(request, user)
             messages.success(request, (" Welcome '{}' to Diesefive platform , Expand Your Knowledge about Digital Marketing and learn how to build your own Business! ".format(username)))
-            return redirect('home')
+            return redirect('profile')
 
         else:
             messages.warning(request, ' Username or password is not Corerrect! Please try again!')
             #return redirect('login')
-    
     else :
         form = loginform()
 

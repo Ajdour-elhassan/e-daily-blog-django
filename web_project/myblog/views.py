@@ -11,7 +11,7 @@ from webbrowser import get
 
 
 def home(request):
-            
+
     posts = post.objects.all()
 
     paginator = Paginator(posts, 4)
@@ -40,9 +40,9 @@ def about (request) :
 
 
 
-def detail(request, post_id) :
+def Creativity(request, slug) :
     
-    post1 = get_object_or_404(post, pk=post_id)
+    post1 = get_object_or_404(post, slug = slug)
     comments = post1.comments.filter(active=True)
 
     # this is for checking  before saving_data from comment in database
@@ -54,7 +54,6 @@ def detail(request, post_id) :
             new_comment.post = post1
             new_comment.save()
             comment_form = Newcomment()
-
     else:
         comment_form = Newcomment()
 
@@ -70,7 +69,7 @@ def detail(request, post_id) :
 
 
 
-def book (request) :
+def Productivity_Articles (request) :
     books = Book.objects.all()
     # set paginator variable (paginator)
     paginator = Paginator(books, 4)
@@ -94,16 +93,15 @@ def book (request) :
     return render(request, 'book.html', context )
     
 
-def book_detail(request, book_id):
-            
-    book = get_object_or_404(Book, pk=book_id)
+def Productivity (request, slug):
+    book = get_object_or_404(Book, slug=slug)
     feedbacks = book.feedbacks.filter(active=True)
 
     if request.method == "POST" :
        feedback_form = FeedbackForm(data=request.POST)
        if feedback_form.is_valid() :
           new_feedback = feedback_form.save(commit=False) # (commit=False) => Don't save data 
-         # until you  determine which (book_id) to related this feedback  => { new_feedback.book = book } 
+         # until you  determine which (book_id) to related this feedback  => { new_feedback.book = book }
           new_feedback.book = book
           new_feedback.save()
           feedback_form = FeedbackForm()

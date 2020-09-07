@@ -8,10 +8,7 @@
 </div>
 {% endfor %}
 {% endif %}
-
-
-
-     
+ 
 <section>
   <header>
                <div class="container mr-2 mt-5">
@@ -27,15 +24,14 @@
                                 <div class="card mb-3" >
                                         <img class="card-img-" src="{{post.image.url}}" alt="Card image cap"  style="height: 18rem;">
                                         <div class="card-body">
-                                          <p class="card-title">{{post.title}}</p>
+                                          <p class="card-title font-weight-bold">{{post.title}} .</p>
                                           {% if post.content|length > 120 %}
                                           {{post.content|slice:'100'}} (...)
                                           {% else %}
                                           <p class="card-text">{{post.content|linebreaks}}</p>
                                           {% endif %}
                                           <p class="card-text"><small class="text-muted">Last updated 1 hour ago </small></p>
-                                          <a href="{% url 'detail' post.id %}" class="btn btn-success">Read more ...</a>
-                
+                                          <a href="{{post.get_url}}" class="btn btn-success">Read more ...</a>
                                         </div>
                                       </div>
                                 {% endfor %}

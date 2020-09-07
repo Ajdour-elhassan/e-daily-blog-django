@@ -1,6 +1,6 @@
 /*@font-face {
 
-    font-family: 
+    font-family:
     src: url('../fonts/Allerta-Regular.ttf')  format("truetype"),
         local('Allerta');
 }  */
@@ -36,14 +36,11 @@ html,body {
    text-align: left ;
 }
 
-
 .image {
-
     background-image: url('../images/d.jpg') ;
     background-size: cover;
     background-position: center center;
     height: 450px ;
-
 }
 
 .title{
@@ -82,10 +79,10 @@ html,body {
     background-color: #0a2a47 ;
     color : white;
     text-align: center;
-
+    
+     
 }
 
 .gmi{
     height: 200px;
 }
-

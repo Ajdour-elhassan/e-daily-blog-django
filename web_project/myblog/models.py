@@ -5,6 +5,7 @@ from django.urls import reverse
 
 class post(models.Model):
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    slug  = models.SlugField(max_length=250 , unique=True)
     title = models.CharField(max_length=100)
     content = models.TextField()
     post_date = models.DateTimeField(default=timezone.now)
@@ -15,14 +16,16 @@ class post(models.Model):
 
     def __str__(self):
         return (f'Post_title : {self.title}')
-
-        #Arranagin POST date from new to old date .
+    
+    #Arranagin POST date from new to old date
     class Meta():
         ordering = ('-post_update',)
 
+    # we gave here url/ or id as slug depends on ('products_by_category' = Url)
+    def get_url(self):
+        return reverse('post_by_slug', args=[self.slug])
 
 # model for (comment_ making comments )
-
 class comment(models.Model) :
 
     name = models.CharField(max_length=50 , verbose_name='NAME')
@@ -43,6 +46,7 @@ class comment(models.Model) :
 class Book (models.Model) :
 
     cover = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    slug = models.SlugField(max_length=250, unique=True)
     title = models.CharField(max_length=100, default="title")
     content = models.TextField()
     published_date = models.DateField(auto_now=True)
@@ -54,6 +58,9 @@ class Book (models.Model) :
     
     class Meta :
         ordering = ('-published_date',)
+
+    def get_url(self) :
+        return reverse('book_by_slug', args=[self.slug])
 
 
 class Feedback (models.Model) :
@@ -70,68 +77,9 @@ class Feedback (models.Model) :
         return 'commented {} on  {} .'.format(self.name, self.book)
     class Meta():
         ordering = ('-feedback_date',)
-
-
-                
-
-
-
-
-        #Arraning comment date from new to old date .
-
-   
-
-
-#class login(models.Model):
-    #username = models.CharField(max_length=15)
-    #password = models.CharField(max_length=15)
-    #def __str__(self):
-        #return 'Username : {} . password : {} .'.format(self.username, self.password)
-
-#class register(models.Model) :
     
-    #username = models.CharField(max_length=50)
-    #first_name = models.CharField(max_length=50)
-    #second_name = models.CharField(max_length=50)
-    #email = models.EmailField(max_length=50)
-    #gender = models.CharField(Choices=(
-        #('g', "Male"),
-        #('b', "Female"),
-        #),
-        #max_length=1
-    #)
-    #birth =  models.DateField()
-    #password1 = models.CharField(max_length=50)
-    #password2 = models.CharField(max_length=50)
-    #user= models.ForeignKey(User, on_delete=models.CASCADE)
 
-    #def __str__(self):
-        #return 'Username:  {} | Password : {} .'.format(self.username , self.password1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#class  school(models.Model) :
-
-
-
-
-
-
-
-
-
+    
 
 
 
